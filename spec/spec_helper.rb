@@ -26,6 +26,10 @@ RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
+  
+  # RSpec::Core::ExampleGroup#example is deprecated and will be removed                                                                                 # in RSpec 3. There are a few options for what you can use instead:
+  # If you can't update the code at this call site (e.g. because it is in                                                                               # an extension gem), you can use this snippet to continue making this                                                                                 # method available in RSpec 2.99 and RSpec 3:   
+  config.expose_current_running_example_as :example
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
