@@ -7,7 +7,7 @@ describe "Viewing todo items" do
    
   it "displays the title of the todo list" do
     visit_todo_list(todo_list)
-    within("div.content h1") do
+    within("h2.page-title") do
       expect(page).to have_content(todo_list.title)
     end
   end
@@ -23,9 +23,9 @@ describe "Viewing todo items" do
     
     visit_todo_list(todo_list)
     
-    expect(page.all("table.todo_items tbody tr").size).to eq(2)
+    expect(page.all("ul.todo-items li").size).to eq(2)
     
-    within "table.todo_items" do
+    within "ul.todo-items" do
       expect(page).to have_content("Milk")
       expect(page).to have_content("Eggs")
     end
